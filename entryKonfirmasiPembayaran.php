@@ -7,7 +7,7 @@
  </head>
  
  <body>
-	 <script type="text/javascript">
+	<script type="text/javascript">
 		var ng_config = {
 			assests_dir: 'assets/'	// the path to the assets directory
 		}
@@ -16,17 +16,16 @@
 	<script type="text/javascript" src="components/calendar.js"></script>
 	<script type="text/javascript">
 	var my_cal;
+	var my_cal2;
 	ng.ready(function(){
 			my_cal = new ng.Calendar({
 				input: 'date1',	
 				start_date: 'year-50',	
-				end_date: 'year+100',	
+				end_date: 'year+100',
 				date_format:'Y-m-d',
 				display_date: new Date()
 				
-			});
-			
-			
+			});			
 		});
 	</script>
 	

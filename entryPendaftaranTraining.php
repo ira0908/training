@@ -52,19 +52,11 @@
 		
 		<form method="POST" action="system/savePendaftaranTraining.php">
 			<table>
-				<tr>
-					<td>
-						
-					</td>
-					<td>
-						<input type="text" name="tanggalDaftar"/>
-					</td>
-				</tr>
-				<tr>
 					<td>
 						Nama
 					</td>
 					<td>
+						<input type="hidden" name="tanggalDaftar" value=<??>/>
 						<input type="text" name="nama" class=""/>
 					</td>
 				</tr>

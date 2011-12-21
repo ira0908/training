@@ -4,7 +4,7 @@
 	$nama				=$_POST["nama"];
 	$alamat				=$_POST["alamat"];
 	$TanggalLahir		=$_POST["TanggalLahir"];
-	$tanggalDaftar		=date();
+	$tanggalDaftar		=date('Y-m-d');
 	$pekerjaan			=$_POST["pekerjaan"];
 	$email				=$_POST["email"];
 	$telp				=$_POST["telp"];
