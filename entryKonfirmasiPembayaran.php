@@ -53,7 +53,7 @@
         No.Pendaftaran
       </td>
       <td>
-         <input type="text" name="no_pendaftaran" class="">
+         <input type="text" name="id_pendaftaran" class="">
          &nbsp;
       </td>
    </tr>

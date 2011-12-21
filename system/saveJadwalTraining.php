@@ -1,7 +1,7 @@
 <?php
 	include("../configuration/configuration.php");
 	
-	$a	=$_POST["kode_paket_training"];
+	$a	=$_POST["id_paket_training"];
 	$b	=$_POST["tanggal_mulai"];
 	$c	=$_POST["tanggal_selesai"];
 	$d	=$_POST["jam"];
@@ -16,6 +16,6 @@
 	$m	=$_POST["aktif"];
 	$n	=$_POST["save"];
 	
-	$que	=	mysql_query("INSERT INTO Jadwal_Training (kode_paket_training,tanggal_mulai,tanggal_selesai,durasi_jam,durasi_hari,waktu_training,maksimal_peserta,harga_umum,harga_mahasiswa,lokasi_training,silabus,fasilitas,aktif) VALUES('$a','$b','$c','$d','$e','$f','$g','$h','$i','$j','$k','$l','$m')")Or Die(mysql_error());	
-	header("location:../listJadwalTraining.php");
+	$que	=	mysql_query("INSERT INTO Jadwal_Training (id_paket_training,tanggal_mulai,tanggal_selesai,durasi_jam,durasi_hari,waktu_training,maksimal_peserta,harga_umum,harga_mahasiswa,lokasi_training,silabus,fasilitas,aktif) VALUES('$a','$b','$c','$d','$e','$f','$g','$h','$i','$j','$k','$l','$m')")Or Die(mysql_error());	
+	header("location:../listJadwalTrainingAdmin.php");
 ?>

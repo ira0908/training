@@ -39,11 +39,11 @@
 			   $id = $data['id'];
 
 			   // membuat IF untuk masing-masing propinsi
-			   echo "if (document.entryPendaftaranTraining.PaketTraining.value == \"".$id."\")";
+			   echo "if (document.entryPendaftaranTraining.id_paket_training.value == \"".$id."\")";
 			   echo "{";
 
 			   // membuat option kabupaten untuk masing-masing propinsi
-			   $query2 = "SELECT * FROM Jadwal_Training  WHERE kode_paket_training = $id";
+			   $query2 = "SELECT * FROM Jadwal_Training  WHERE id_paket_training = $id";
 			   $hasil2 = mysql_query($query2);
 			   $content = "document.getElementById('jadwal').innerHTML = \"";
 			   while ($data2 = mysql_fetch_array($hasil2))
@@ -140,7 +140,7 @@
 						Status
 					</td>
 					<td>
-						<input type="radio" name="status" value="mahasiswa" onClick="enabledMahasiswa();">Mahasiswa
+						<input checked='checked' type="radio" name="status" value="mahasiswa" onClick="enabledMahasiswa();">Mahasiswa
 						<input type="radio" name="status" value="umum" onClick="disabledMahasiswa();">Umum			
 					</td>
 				</tr>
@@ -173,7 +173,7 @@
 						Paket Training
 					</td>
 					<td>
-						<select name="PaketTraining" onchange="showJadwal()">
+						<select name="id_paket_training" onchange="showJadwal()">
 							  <option>Silakan Pilih</option>
 							  <option>------------------------</option>
 							  <?php
@@ -182,7 +182,7 @@
 									 $hasil = mysql_query($query);
 									 while ($data = mysql_fetch_array($hasil))
 									 {
-										echo "<option value='".$data['id']."'>".$data['nama_paket_training']."</option>";
+										echo "<option value='".$data['id']."'>".$data['nama_paket_training']."(".$data['kode_paket_training'].")</option>";
 									 }
 							  ?>
 							  </select>
@@ -193,7 +193,7 @@
 						Tanggal Training
 					</td>
 					<td>
-						<select name="TanggalTraining" id='jadwal'>
+						<select name="id_jadwal" id='jadwal'>
 						</select>
 					</td>
 				</tr>

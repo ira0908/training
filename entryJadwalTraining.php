@@ -43,14 +43,14 @@
 		<center><h1>Jadwal Training</h1></title></center>
 		<table>
 			<tr>
-				<td>Kode Paket Training</td>
+				<td>Nama Paket Training</td>
 				<td>:</td>
-				<td><select name='kode_paket_training'>
+				<td><select name='id_paket_training'>
 					<?php
 						while($arr = mysql_fetch_array($que))
 						{
 					?>
-						<option value=<?=$arr['kode_paket_training']?>>
+						<option value=<?=$arr['id']?>>
 						<?=$arr['nama_paket_training']?>
 						</option>
 					<?php	

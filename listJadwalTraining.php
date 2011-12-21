@@ -1,6 +1,6 @@
 <?php
 	include ("configuration/configuration.php");
-	$query=mysql_query("select a.*, b.nama_paket_training from Jadwal_Training as a, Paket_Training as b WHERE a.kode_paket_training=b.id");
+	$query=mysql_query("select a.*, b.nama_paket_training, b.kode_paket_training from Jadwal_Training as a, Paket_Training as b WHERE a.id_paket_training=b.id and aktif=1");
 
 ?>
 
@@ -37,7 +37,11 @@
 					<tr class="isi">
 						<td>
 							<a href=detailJadwalTraining.php?id=<?php echo $array['id'];?>>
-							<?php echo $array['nama_paket_training'];?></a>
+							<a href=detailJadwalTraining.php?id=<?php echo $array['id'];?>>
+							<?php echo $array['nama_paket_training'];?>
+							(
+							<?php echo $array['kode_paket_training'];?>
+							)</a>
 						</td>
 						<td>
 							<?php echo $array['tanggal_mulai'];?>

@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS Paket_Training;
 create table Paket_Training
 (
 id int(5) not null primary key auto_increment,
-kode_paket_training int(5) not null,
+kode_paket_training varchar(10) not null,
 nama_paket_training varchar(50) not null
 )ENGINE=INNODB;
 
@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS Konfirmasi_Pembayaran;
 create table Konfirmasi_Pembayaran
 (
 id int(5) not null primary key auto_increment,
-no_pendaftaran int(5) not null,
+id_pendaftaran int(5) not null,
 tanggal_pembayaran date not null,
 nominal varchar(255) not null,
 pembayaran varchar(50) not null,
@@ -22,7 +22,7 @@ DROP TABLE IF EXISTS Jadwal_Training;
 create table Jadwal_Training
 (
 id int(5) not null primary key auto_increment,
-kode_paket_training int(5) not null,
+id_paket_training int(5) not null,
 tanggal_mulai date not null,
 tanggal_selesai date not null,
 durasi_jam varchar(50) not null,
@@ -35,7 +35,7 @@ lokasi_training varchar(255) not null,
 silabus longtext not null,
 fasilitas text not null,
 aktif boolean not null,
-FOREIGN KEY(kode_paket_training)
+FOREIGN KEY(id_paket_training)
 REFERENCES Paket_Training(id)
 ON UPDATE CASCADE ON DELETE CASCADE
 )ENGINE=INNODB;
@@ -55,11 +55,11 @@ status varchar(50) not null,
 Perguruan_Tinggi varchar(50),
 jurusan varchar(50),
 semester varchar(50),
-paket_training int(5) not null,
+id_paket_training int(5) not null,
 id_jadwal int(5) not null,
 pembayaran_dp varchar(50) not null,
 keterangan text not null,
-FOREIGN KEY(paket_training)
+FOREIGN KEY(id_paket_training)
 REFERENCES Paket_Training(id)
 ON UPDATE CASCADE ON DELETE CASCADE,
 FOREIGN KEY(id_jadwal)

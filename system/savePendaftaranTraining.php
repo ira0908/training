@@ -12,8 +12,8 @@
 	$Perguruan_Tinggi	=$_POST["Perguruan_Tinggi"];
 	$jurusan			=$_POST["jurusan"];
 	$semester			=$_POST["semester"];
-	$PaketTraining		=$_POST["PaketTraining"];
-	$TanggalTraining	=$_POST["TanggalTraining"];
+	$PaketTraining		=$_POST["id_paket_training"];
+	$TanggalTraining	=$_POST["id_jadwal"];
 	$pembayaran			=$_POST["pembayaran"];
 	$keterangan			=$_POST["keterangan"];
 	
@@ -21,7 +21,7 @@
 	{
 		if($Perguruan_Tinggi!=null && $jurusan!=null && $semester!=null)
 		{
-			$query1 = mysql_query("INSERT INTO Pendaftaran_Training (nama,alamat,tanggal_lahir,tanggal,pekerjaan,email,no_telpon,status,Perguruan_Tinggi,jurusan,semester,paket_training,id_jadwal,pembayaran_dp,keterangan)VALUES ('$nama','$alamat','$TanggalLahir','$tanggalDaftar','$pekerjaan','$email','$telp','$status','$Perguruan_Tinggi','$jurusan','$semester','$PaketTraining','$TanggalTraining','$pembayaran','$keterangan')");
+			$query1 = mysql_query("INSERT INTO Pendaftaran_Training (nama,alamat,tanggal_lahir,tanggal,pekerjaan,email,no_telpon,status,Perguruan_Tinggi,jurusan,semester,id_paket_training,id_jadwal,pembayaran_dp,keterangan)VALUES ('$nama','$alamat','$TanggalLahir','$tanggalDaftar','$pekerjaan','$email','$telp','$status','$Perguruan_Tinggi','$jurusan','$semester','$PaketTraining','$TanggalTraining','$pembayaran','$keterangan')");
 		}
 		else
 		{
