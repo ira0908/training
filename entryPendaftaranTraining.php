@@ -105,12 +105,8 @@
 						Status
 					</td>
 					<td>
-						<input type="radio" name="status" value="mahasiswa" onClick="enabledMahasiswa();">
-							Mahasiswa
-						</input>
-						<input checked="checked" type="radio" name="status" value="umum" onClick="disabledMahasiswa();">
-							Umum
-						</input>			
+						<input type="radio" name="status" value="mahasiswa" onClick="enabledMahasiswa();">Mahasiswa
+						<input type="radio" name="status" value="umum" onClick="disabledMahasiswa();">Umum			
 					</td>
 				</tr>
 				<tr>
@@ -172,7 +168,7 @@
 						Pembayaran DP
 					</td>
 					<td>
-						<input type="radio" name="pembayaran" value="cash" checked="checked">
+						<input type="radio" name="pembayaran" value="cash">
 							Cash
 						</input>
 						<input type="radio" name="pembayaran" value="transfer">

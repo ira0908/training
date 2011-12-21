@@ -4,6 +4,19 @@
      Konfirmasi Pembayaran
    </title>
    <link rel="stylesheet" type="text/css" href="../assets/css/ng_all.css">
+   <script type="text/javascript"> 
+			$(document).ready(function(){
+				$("#tanggal").datepicker({showAnim:"drop", showOptions:{ direction: "up" }});
+				disabledTransfer();
+			});
+			function enabledTransfer(){
+				document.getElementById("dr").disabled=false;
+			}
+			
+			function disabledTransfer(){
+				document.getElementById("dr").disabled=true;
+			}
+		</script>
  </head>
  
  <body>
@@ -66,8 +79,8 @@
 		Pembayaran
     </td>
       <td>
-		  <input type="radio" name="pembayaran" value="cash">Cash
-		  <input type="radio" name="pembayaran" value="transfer">Transfer
+		  <input type="radio" name="pembayaran" value="cash" onClick="disabledTransfer();">Cash
+		  <input type="radio" name="pembayaran" value="transfer" onClick="enabledTransfer();">Transfer
 		  &nbsp;
 	  </td>
    </tr>
@@ -76,7 +89,7 @@
        Dari Rekening
       </td>
       <td>
-         <input type="text" name="dari_rekening" class="">
+         <input type="text" name="dari_rekening" class="" id='dr'>
          &nbsp;
       </td>
    </tr>
