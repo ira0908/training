@@ -1,3 +1,12 @@
+<?php
+	include("configuration/configuration.php");
+	if($_GET['id']){
+	$id	=	$_GET['id'];
+	$que	=	mysql_query("SELECT * FROM Paket_Training WHERE id='$id'");
+	$arr=	mysql_fetch_array($que);
+	}
+
+?>
 <html>
 	<head>
 		<title>
@@ -12,11 +21,11 @@
 					<table>
 						<tr>
 							<td>Kode Paket Training</td>
-							<td><input type="text" name="kode_paket_training" class="input" /></td>
+							<td><input type="text" name="kode_paket_training" value="<?=$arr['kode_paket_training']?>" class="input" /></td>
 						</tr>
 						<tr>
 							<td>Nama Paket Training</td>
-							<td><input type="text" name="nama_paket_training" class="input" /></td>
+							<td><input type="text" name="nama_paket_training" value="<?=$arr['nama_paket_training']?>" class="input" /></td>
 						</tr>
 						<tr>
 							<td></td>
