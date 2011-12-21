@@ -1,7 +1,12 @@
 <?php
 	include("configuration/configuration.php");
 	$que = mysql_query("SELECT * FROM Paket_Training");
-	
+	if($_GET['id'])
+	{
+			$id		=	$_GET['id'];
+			$que2	=	mysql_query("SELECT * FROM Jadwal_Training WHERE id='$id'");
+			$arr2	=	mysql_fetch_array($que2);
+	}
 ?>
 <html>
 	<head>
@@ -45,7 +50,9 @@
 			<tr>
 				<td>Nama Paket Training</td>
 				<td>:</td>
-				<td><select name='id_paket_training'>
+				<td>
+					<input type="hidden" name="id" value="<?=$id?>" />
+					<select name='id_paket_training'>
 					<?php
 						while($arr = mysql_fetch_array($que))
 						{
@@ -59,61 +66,81 @@
 				</td>
 			</tr>
 			<tr>
-				<td>Tanggal Training</td>
-				<td>:</td>
-				<td><input type='text' name='tanggal_mulai' id='date1'>&nbsp;&nbsp;s/d&nbsp;&nbsp;
-				<input type='text' name='tanggal_selesai' id='date2'></td>
+				<td>
+					Tanggal Training
+				</td>
+				<td>
+					:
+				</td>
+				<td>
+						<input type='text' name='tanggal_mulai' id='date1'>
+						&nbsp;&nbsp;s/d&nbsp;&nbsp;
+						<input type='text' name='tanggal_selesai' id='date2'>
+				</td>
 			</tr>
 			<tr>
 				<td>Durasi</td>
 				<td>:</td>
-				<td><input type='text' name='jam' size=5>Jam</td>
+				<td><input type='text' name='jam' size=5 value="<?=$arr2['durasi_jam']?>">Jam</td>
 			</tr>
 			<tr>
 				<td></td>
 				<td></td>
-				<td><input type='text' name='hari' size=5>Hari</td> 
+				<td><input type='text' name='hari' size=5 value="<?=$arr2['durasi_hari']?>">Hari</td> 
 			</tr>
 			<tr>
 				<td>Waktu Training</td>
 				<td>:</td>
-				<td><input type='text' name="waktu"></td>
+				<td><input type='text' name="waktu" value="<?=$arr2['waktu_training']?>"></td>
 			</tr>
 			<tr>
 				<td>Maksimal Peserta</td>
 				<td>:</td>
-				<td><input type='text' name="maksimal" size=5></td>
+				<td><input type='text' name="maksimal" size=5 value="<?=$arr2['maksimal_peserta']?>"></td>
 			</tr>
 			<tr>
 				<td>Harga Umum</td>
 				<td>:</td>
-				<td><input type='text' name="harga_umum"></td>
+				<td><input type='text' name="harga_umum" value="<?=$arr2['harga_umum']?>"></td>
 			</tr>
 			<tr>
 				<td>Harga Mahasiswa</td>
 				<td>:</td>
-				<td><input type='text' name="harga_mahasiswa"></td>
+				<td><input type='text' name="harga_mahasiswa" value="<?=$arr2['harga_mahasiswa']?>"></td>
 			</tr>
 			<tr>
 				<td>Lokasi Training</td>
 				<td>:</td>
-				<td><input type='text' name="lokasi"></td>
+				<td><input type='text' name="lokasi" value="<?=$arr2['lokasi_training']?>"></td>
 			</tr>
 			<tr>
 				<td valign=top>Silabus Training</td>
 				<td valign=top>:</td>
-				<td><textarea name="silabus" rows=15 cols=70></textarea></td>
+				<td><textarea name="silabus" rows=15 cols=70><?=$arr2['silabus']?></textarea></td>
 			</tr>
 			<tr>
 				<td valign=top>Fasilitas</td>
 				<td valign=top>:</td>
-				<td><textarea name="fasilitas" rows=15 cols=50></textarea></td>
+				<td><textarea name="fasilitas" rows=15 cols=50><?=$arr2['fasilitas']?></textarea></td>
 			</tr>
 			<tr>
 			<td>Aktif</td>
 			<td>:</td>
-			<td><input type="radio" name="aktif" value=1>Ya
-		  <input type="radio" name="aktif" value=0>Tidak</td>
+			<td>
+				<?php
+				$aktif=$arr2['aktif'];
+				if($aktif=="1"){
+				?>
+				<input type="radio" name="aktif" checked='checked' value=1>Ya
+				<input type="radio" name="aktif" value=0>Tidak
+				</td>
+				<?php
+				}else{
+				?>
+				<input type="radio" name="aktif" value=1>Ya
+				<input type="radio" name="aktif" checked='checked' value=0>Tidak
+				</td>
+				<?php } ?>
 			</tr>			
 		</table>
 		<input type='submit' name='save' value='save'>
