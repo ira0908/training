@@ -25,6 +25,41 @@
 				document.getElementById("txtSemester").disabled=true;
 			}
 		</script>
+		
+		<script language="JavaScript" type="text/JavaScript">
+		  function showJadwal()
+			 {
+			 <?php
+			 
+			 $query = "SELECT * FROM Paket_Training";
+			 $hasil = mysql_query($query);
+			 
+			 while ($data = mysql_fetch_array($hasil))
+			 {
+			   $id = $data['id'];
+
+			   // membuat IF untuk masing-masing propinsi
+			   echo "if (document.entryPendaftaranTraining.PaketTraining.value == \"".$id."\")";
+			   echo "{";
+
+			   // membuat option kabupaten untuk masing-masing propinsi
+			   $query2 = "SELECT * FROM Jadwal_Training  WHERE kode_paket_training = $id";
+			   $hasil2 = mysql_query($query2);
+			   $content = "document.getElementById('jadwal').innerHTML = \"";
+			   while ($data2 = mysql_fetch_array($hasil2))
+			   {
+				   $content .= "<option value='".$data2['id']."'>".$data2['tanggal_mulai']."</option>";   
+			   }
+			   $content .= "\"";
+			   echo $content;
+			   echo "}\n";   
+			 }
+
+			 ?> 
+			 }
+			</script>
+		
+		
 	</head>
 	<body>
 		<script type="text/javascript">
@@ -50,7 +85,7 @@
 	</script>
 		
 		
-		<form method="POST" action="system/savePendaftaranTraining.php">
+		<form method="POST" action="system/savePendaftaranTraining.php" name="entryPendaftaranTraining">
 			<table>
 					<td>
 						Nama
@@ -138,14 +173,19 @@
 						Paket Training
 					</td>
 					<td>
-						<select name="PaketTraining">
-							<?php
-								while($array1=mysql_fetch_array($query1))
-								{
-									echo"<option value=$array1[id]>$array1[nama_paket_training]</option>";
-								}
-							?>
-						</select>
+						<select name="PaketTraining" onchange="showJadwal()">
+							  <option>Silakan Pilih</option>
+							  <option>------------------------</option>
+							  <?php
+									 // query untuk menampilkan propinsi
+									 $query = "SELECT * FROM Paket_Training";
+									 $hasil = mysql_query($query);
+									 while ($data = mysql_fetch_array($hasil))
+									 {
+										echo "<option value='".$data['id']."'>".$data['nama_paket_training']."</option>";
+									 }
+							  ?>
+							  </select>
 					</td>
 				</tr>
 				<tr>
@@ -153,13 +193,7 @@
 						Tanggal Training
 					</td>
 					<td>
-						<select name="TanggalTraining">
-							<?php
-								while($array2=mysql_fetch_array($query2))
-								{
-									echo"<option value=$array2[id]>$array2[tanggal_mulai]</option>";
-								}
-							?>
+						<select name="TanggalTraining" id='jadwal'>
 						</select>
 					</td>
 				</tr>
@@ -171,7 +205,7 @@
 						<input type="radio" name="pembayaran" value="cash">
 							Cash
 						</input>
-						<input type="radio" name="pembayaran" value="transfer">
+						<input type="radio" name="pembayaran" value="transfer" checked='checked'>
 							Transfer Via BCA
 						</input>
 					</td>
