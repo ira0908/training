@@ -62,6 +62,7 @@
 		
 	</head>
 	<body>
+		<h2>Pendaftaran Training</h2>
 		<script type="text/javascript">
 		var ng_config = {
 			assests_dir: 'assets/'	// the path to the assets directory
@@ -91,7 +92,6 @@
 						Nama
 					</td>
 					<td>
-						<input type="hidden" name="tanggalDaftar" value=<??>/>
 						<input type="text" name="nama" class=""/>
 					</td>
 				</tr>

@@ -1,7 +1,7 @@
 <?php
 include("configuration/configuration.php");
 $id		=$_GET['id'];
-$query	= mysql_query("SELECT a.*, b.nama_paket_training FROM Jadwal_Training as a, Paket_Training as b WHERE a.id='$id' and a.kode_paket_training=b.id");
+$query	= mysql_query("SELECT a.*, b.nama_paket_training, b.kode_paket_training FROM Jadwal_Training as a, Paket_Training as b WHERE a.id='$id' and a.id_paket_training=b.id");
 $array	= mysql_fetch_array($query);
 
 ?>
@@ -10,21 +10,20 @@ $array	= mysql_fetch_array($query);
 	<title>Jadwal Training</title>
 	</head>
 	<body>
-		<center><h1>Jadwal Training</h1></center>
+		<h2>Detail Jadwal Training</h2>
 		<table>
 			<tr>
-				<td>Kode Paket Training</td>
+				<td><b>Kode Paket Training</b></td>
 				<td>:</td>
-				<td><?php echo $array['nama_paket_training']?></td>
-				
+				<td><?php echo $array['nama_paket_training'];?>(<?php echo $array['kode_paket_training'];?>)</td>
 			</tr>
 			<tr>
-				<td>Tanggal Training</td>
+				<td><b>Tanggal Training</b></td>
 				<td>:</td>
 				<td><?php echo $array['tanggal_mulai']?> s/d <?php echo $array['tanggal_selesai']?></td>
 			</tr>
 			<tr>
-				<td>Durasi</td>
+				<td><b>Durasi</b></td>
 				<td>:</td>
 				<td><?php echo $array['durasi_jam']?> Jam</td>
 			</tr>
@@ -34,32 +33,32 @@ $array	= mysql_fetch_array($query);
 				<td><?php echo $array['durasi_hari']?>Hari</td> 
 			</tr>
 			<tr>
-				<td>Waktu Training</td>
+				<td><b>Waktu Training</b></td>
 				<td>:</td>
 				<td><?php echo $array['waktu_training']?></td>
 			</tr>
 			<tr>
-				<td>Maksimal Peserta</td>
+				<td><b>Maksimal Peserta</b></td>
 				<td>:</td>
 				<td><?php echo $array['maksimal_peserta']?></td>
 			</tr>
 			<tr>
-				<td>Harga Training</td>
+				<td><b>Harga Training</b></td>
 				<td>:</td>
 				<td><?php echo $array['harga_umum']?></td>
 			</tr>
 			<tr>
-				<td>Harga Training</td>
+				<td><b>Harga Training</b></td>
 				<td>:</td>
 				<td><?php echo $array['harga_mahasiswa']?></td>
 			</tr>
 			<tr>
-				<td>Lokasi Training</td>
+				<td><b>Lokasi Training</b></td>
 				<td>:</td>
 				<td><?php echo $array['lokasi_training']?></td>
 			</tr>
 			<tr>
-				<td>Silabus Training</td>
+				<td><b>Silabus Training</b></td>
 				<td>:</td>
 				<td>
 					<table>
@@ -70,7 +69,7 @@ $array	= mysql_fetch_array($query);
 				</td>
 			</tr>
 			<tr>
-				<td>Fasilitas</td>
+				<td><b>Fasilitas</b></td>
 				<td>:</td>
 				<td>
 					<table>

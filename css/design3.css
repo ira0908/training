@@ -1,0 +1,87 @@
+body{
+	Font-Family:Verdana;
+}
+
+table{
+	Width : 320px;
+	Border:1px Solid Black;
+	Border-Radius : 10px 10px 10px 10px;
+}
+
+table:hover{
+	Box-Shadow : 3px 3px 3px 0 Black;
+}
+
+tr.top{
+	Height : 50px;
+}
+
+tr.mid{
+	Height : 45px;
+}
+
+tr.bottom{
+	Height : 35px;
+}
+
+td.title{
+	Color : White;
+	Background-Color : 333399;
+	Font-Family : Georgia;
+	Font-Size : 28pt;
+	Text-Align : Center;
+	Border-Radius : 8px 8px 0 0;
+}
+
+td.title2{
+	Color : White;
+	Background-Color : 333399;
+	Font-Family : Georgia;
+	Font-Size : 12pt;
+	Text-Align : Center;
+}
+
+td.left{
+	Width : 170px;
+	Text-Align : Left;
+	Padding-Left : 10px;
+	Font-Size : 11pt;
+}
+
+td.right{
+	Width : 150px;
+	Text-Align : Right;
+	Padding-Right : 10px;
+}
+
+td.submit{
+	Text-Align : Right;
+	Padding-Right : 10px;
+	Padding-Bottom : 10px;
+}
+
+input.text{
+	Height : 30px;
+	Width : 150px;
+	Font-Family : Verdana;
+	Font-Size : 12px;
+	Font-Weight : Bold;
+	Padding-Left : 10px;
+	Border : 1px Solid Grey;
+	Border-Radius : 8px 8px 8px 8px;
+}
+
+input.button{
+	Background-Color : White;
+	Height : 28px;
+	Width : 70px;
+	Font-Family : Sans Serif;
+	Font-Size : 15px;
+	Padding-Top : 3px;
+	Border : 1px Solid Black;
+	Border-Radius : 7px 7px 7px 7px;
+}
+
+input:hover{
+	Box-Shadow : 3px 3px 3px 0 Black;
+}

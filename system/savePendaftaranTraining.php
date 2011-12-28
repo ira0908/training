@@ -29,19 +29,19 @@
 				"
 					<script>
 						alert('Perguruan Tinggi, Jurusan Dan Semester Harus Diisi');
-						location='../entryPendaftaranTraining.php';
+						location='../index.php?menu=entryPendaftaranTraining';
 					</script>
 				";
 		}
 	}
 	else
 	{
-		$query2 = mysql_query("INSERT INTO Pendaftaran_Training (nama,alamat,tanggal_lahir,tanggal,pekerjaan,email,no_telpon,status,Perguruan_Tinggi,jurusan,semester,paket_training,id_jadwal,pembayaran_dp,keterangan)VALUES ('$nama','$alamat','$TanggalLahir','$tanggalDaftar','$pekerjaan','$email','$telp','$status','$Perguruan_Tinggi','$jurusan','$semester','$PaketTraining','$TanggalTraining','$pembayaran','$keterangan')");
+		$query2 = mysql_query("INSERT INTO Pendaftaran_Training (nama,alamat,tanggal_lahir,tanggal,pekerjaan,email,no_telpon,status, id_paket_training,id_jadwal,pembayaran_dp,keterangan)VALUES ('$nama','$alamat','$TanggalLahir','$tanggalDaftar','$pekerjaan','$email','$telp','$status','$PaketTraining','$TanggalTraining','$pembayaran','$keterangan')");
 			Echo
 				"
 					<script>
 						alert('Terima kasih telah melakukan pendaftaran');
-						location='../entryPendaftaranTraining.php';
+						location='../index.php?menu=entryPendaftaranTraining';
 					</script>
 				";
 	}
