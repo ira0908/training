@@ -29,7 +29,7 @@
 				"
 					<script>
 						alert('Perguruan Tinggi, Jurusan Dan Semester Harus Diisi');
-						location='../entryPendaftaranTraining.php';
+						location='../index.php?menu=entryPendaftaranTraining';
 					</script>
 				";
 		}
@@ -41,7 +41,7 @@
 				"
 					<script>
 						alert('Terima kasih telah melakukan pendaftaran');
-						location='../entryPendaftaranTraining.php';
+						location='../index.php?menu=entryPendaftaranTraining';
 					</script>
 				";
 	}

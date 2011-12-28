@@ -101,9 +101,13 @@
          <textarea name="keterangan" cols=30 rows=5 class=""></textarea>
       </td>
    </tr>
+   <tr>
+	<td></td>
+	<td><input type="submit" name="save" value="save"></td>
+   </tr>
    </table>
-        <input type="submit" name="save" value="save">
         </form>
+        
  </body>
 </html>
 

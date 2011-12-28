@@ -12,6 +12,7 @@
 		</title>
 	</head>
 	<body>
+		<h2>Jadwal Training</h2>
 		<table border="2" align="center" cellpadding='4' cellspacing="0">
 			<tr>
 				<th rowspan='2' align='center'>Nama Paket<br>Training</th>
@@ -35,9 +36,8 @@
 					{
 				?>
 					<tr class="isi">
-						<td>
-							<a href=detailJadwalTraining.php?id=<?php echo $array['id'];?>>
-							<a href=detailJadwalTraining.php?id=<?php echo $array['id'];?>>
+						<td width=17%>
+							<a href=index.php?menu=detailJadwalTraining&id=<?php echo $array['id'];?>>
 							<?php echo $array['nama_paket_training'];?>
 							(
 							<?php echo $array['kode_paket_training'];?>
