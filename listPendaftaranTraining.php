@@ -42,7 +42,7 @@
 		<th>Keterangan</th>
 	</tr>
 	<?php
-		$que2	=	mysql_query("SELECT a.*, b.nama_paket_training, c.tanggal_mulai FROM Pendaftaran_Training as a, Paket_Training as b, Jadwal_Training as c WHERE a.paket_training=b.id and a.id_jadwal=c.id");
+		$que2	=	mysql_query("SELECT a.*, b.nama_paket_training, c.tanggal_mulai FROM Pendaftaran_Training as a, Paket_Training as b, Jadwal_Training as c WHERE a.id_paket_training=b.id and a.id_jadwal=c.id");
 		while($arr2	=	mysql_fetch_array($que2))
 		{
 	?>

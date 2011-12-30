@@ -13,7 +13,7 @@
 	</head>
 	<body>
 		<h2>Jadwal Training</h2>
-		<table border="2" align="center" cellpadding='4' cellspacing="0">
+		<table border="2" align="center" cellpadding='4' cellspacing="0" width=100%>
 			<tr>
 				<th rowspan='2' align='center'>Nama Paket<br>Training</th>
 				<th colspan='2' align='center'>Tanggal</th>
@@ -24,12 +24,12 @@
 				<th rowspan='2' align='center'>Lokasi<br />Training</th>
 			</tr>
 			<tr align='center'>
-				<th>mulai</th>
-				<th>selesai</th>
-				<th>jam</th>
-				<th>hari</th>
-				<th>umum</th>
-				<th>mahasiswa</th>
+				<th>Mulai</th>
+				<th>Selesai</th>
+				<th>Jam</th>
+				<th>Hari</th>
+				<th>Umum</th>
+				<th>Mahasiswa</th>
 			</tr>
 				<?php
 					while($array=mysql_fetch_array($query))
@@ -37,37 +37,37 @@
 				?>
 					<tr class="isi">
 						<td width=17%>
-							<a href=index.php?menu=detailJadwalTraining&id=<?php echo $array['id'];?>>
+							<a href=?menu=detailJadwalTraining&id=<?php echo $array['id'];?>>
 							<?php echo $array['nama_paket_training'];?>
 							(
 							<?php echo $array['kode_paket_training'];?>
 							)</a>
 						</td>
-						<td>
+						<td align=center>
 							<?php echo $array['tanggal_mulai'];?>
 						</td>
-						<td>
+						<td align=center>
 							<?php echo $array['tanggal_selesai'];?>
 						</td>
-						<td>
+						<td align=center>
 							<?php echo $array['durasi_jam'];?>
 						</td>
-						<td>
+						<td align=center>
 							<?php echo $array['durasi_hari'];?>
 						</td>
-						<td>
+						<td align=center>
 							<?php echo $array['waktu_training'];?>
 						</td>
-						<td>
-							<?php echo $array['maksimal_peserta'];?>
+						<td align=center>
+							<?php echo $array['maksimal_peserta'];?> orang
 						</td>
-						<td>
-							<?php echo $array['harga_umum'];?>
+						<td align=right>
+							Rp <?php echo $array['harga_umum'];?>
 						</td>
-						<td>
-							<?php echo $array['harga_mahasiswa'];?>
+						<td align=right>
+							Rp <?php echo $array['harga_mahasiswa'];?>
 						</td>
-						<td>
+						<td align=center>
 							<?php echo $array['lokasi_training'];?>
 						</td>
 					</tr>

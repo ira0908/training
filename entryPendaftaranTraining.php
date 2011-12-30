@@ -87,7 +87,7 @@
 		
 		
 		<form method="POST" action="system/savePendaftaranTraining.php" name="entryPendaftaranTraining">
-			<table>
+			<table class="isi">
 					<td>
 						Nama
 					</td>
@@ -223,7 +223,7 @@
 						&nbsp;
 					</td>
 					<td>
-						<input type="submit" value="submit" name="submit" />
+						<input type="submit" value="Submit" name="submit" />
 					</td>
 				</tr>
 			</table>

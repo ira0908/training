@@ -1,14 +1,18 @@
 <html>
 <head>
 <title>List Paket Training</title>
+<link rel="stylesheet" type="text/css" href="css/design2.css" />
 </head>
 
 <body>
-<center><h1>List Paket Training</h1>
+<h1>List Paket Training</h1>
+
+<a href="entryPaketTraining.php">Entry Paket Training</a>
 <table border='1'>
 <tr> 
-<td>Kode Kode Training</td>
-<td>Nama Paket Training</td>
+<th>Kode Kode Training</th>
+<th>Nama Paket Training</th>
+<th>Action</th>
 
 </tr>
 <?php
@@ -19,7 +23,7 @@ $q=mysql_query("select * from Paket_Training");
 while($a=mysql_fetch_array($q))
 {
 ?>
-<tr> 
+<tr class="isi"> 
 <td><?=$a['kode_paket_training']?></td>
 <td><?=$a['nama_paket_training']?></td>
 <td>
@@ -28,7 +32,6 @@ while($a=mysql_fetch_array($q))
 
 </tr>
 <?php } ?>
-</center>
 </table>
 </body>
 </html>

@@ -47,7 +47,7 @@
 	   Konfirmasi Pembayaran
    </h2>
 
-   <table>
+   <table  class="isi">
    <tr>
       <td>
         No.Pendaftaran

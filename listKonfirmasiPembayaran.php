@@ -20,12 +20,12 @@
 <?php
 
 include ('configuration/configuration.php');
-$q=mysql_query("select a.*, b.nama, c.nama_paket_training from Konfirmasi_Pembayaran as a, Pendaftaran_Training as b, Paket_Training as c WHERE a.no_pendaftaran=b.id and b.paket_training=c.id");
+$q=mysql_query("select a.*, b.nama, c.nama_paket_training from Konfirmasi_Pembayaran as a, Pendaftaran_Training as b, Paket_Training as c WHERE a.id_pendaftaran=b.id and b.id_paket_training=c.id");
 while($a=mysql_fetch_array($q))
 {
 ?>
 <tr class="isi"> 
-<td><?=$a['no_pendaftaran']?></td>
+<td><?=$a['id_pendaftaran']?></td>
 <td><?=$a['nama']?></td>
 <td><?=$a['nama_paket_training']?></td>
 <td><?=$a['tanggal_pembayaran']?></td></td>
